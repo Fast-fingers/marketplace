@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://obsidianmarket.rf.gd/dumps.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumps - Shadow Bros</title>
+    <link href="./Dumps - Shadow Bros_files/all.min.css" rel="stylesheet">
+    <link href="./Dumps - Shadow Bros_files/flag-icon.min.css" rel="stylesheet">
+    <link href="./Dumps - Shadow Bros_files/css2" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 2px, transparent 2px);
+            background-size: 30px 30px;
+            animation: particleFloat 20s linear infinite;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        @keyframes particleFloat {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideInDown 0.5s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .header-title {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            flex: 1;
+            margin: 0 16px;
+        }
+
+        .balance-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 20px 24px;
+            padding: 24px;
+            border-radius: 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(102, 126, 234, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8); }
+        }
+
+        .balance-title {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
+
+        .balance-amount {
+            font-size: 32px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-content {
+            padding: 0 24px 100px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .page-subtitle {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .filters-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-label {
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        .search-input, .filter-select {
+            padding: 12px 16px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus, .filter-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 12px rgba(102, 126, 234, 0.5);
+            transform: scale(1.02);
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            transition: opacity 0.3s ease;
+        }
+
+        .search-input:focus::placeholder {
+            opacity: 0;
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .clear-filters {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .clear-filters:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-number {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .card-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .card-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        .card-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(102, 126, 234, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card-item:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .card-type {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .card-type i {
+            font-size: 24px;
+            color: #667eea;
+        }
+
+        .card-level {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .card-description {
+            font-size: 14px;
+            opacity: 0.7;
+            margin: 12px 0;
+            line-height: 1.5;
+        }
+
+        .card-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .detail-label {
+            font-size: 12px;
+            opacity: 0.7;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            font-weight: 500;
+        }
+
+        .card-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 12px 0;
+            opacity: 0.7;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #10b981;
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.5);
+        }
+
+        .buy-button:active {
+            transform: scale(0.95);
+        }
+
+        .buy-button:disabled {
+            background: rgba(255, 255, 255, 0.2);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .buy-button.ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s ease-out;
+        }
+
+        @keyframes ripple {
+            to { width: 200px; height: 200px; opacity: 0; }
+        }
+
+        .buy-button.loading .loading {
+            display: inline-block;
+        }
+
+        .loading {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        .message {
+            color: #ffffff;
+            text-align: center;
+            font-size: 14px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            position: relative;
+            animation: slideInError 0.5s ease-out;
+        }
+
+        @keyframes slideInError {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .message.success {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .message.error {
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .message .close-message {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .message .close-message:hover {
+            color: #ffffff;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 64px 20px;
+            color: rgba(255, 255, 255, 0.7);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .empty-state i {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .empty-state h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .empty-state p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-around;
+            z-index: 1000;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .nav-item.active {
+            color: #667eea;
+        }
+
+        .nav-item i {
+            font-size: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0;
+            }
+
+            .main-content {
+                padding: 0 16px 100px;
+            }
+
+            .balance-card {
+                margin: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <button class="back-btn" onclick="history.back()">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h1 class="header-title">Dumps</h1>
+                <div style="width: 40px;"></div>
+            </div>
+        </div>
+
+       
+
+        <div class="main-content">
+            <h1 class="page-title">Dumps Collection</h1>
+            <p class="page-subtitle">Browse and purchase high-quality dumps securely. Take a screenshot and contact us with desired product</p>
+
+            <div id="message-container"></div>
+
+            <div class="filters-section">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label class="filter-label">Search Dumps</label>
+                        <div class="search-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="search-input" placeholder="Search by name, description, or origin..." id="searchInput">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Data Type</label>
+                        <select class="filter-select" id="dataTypeFilter">
+                            <option value="">All Types</option>
+                                                            <option value="discover">Discover</option>
+                                                            <option value="mastercard">Mastercard</option>
+                                                            <option value="visa">Visa</option>
+                                                            <option value="amex">Amex</option>
+                                                    </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Origin</label>
+                        <select class="filter-select" id="originFilter">
+                            <option value="">All Origins</option>
+                                                            <option value="us">US</option>
+                                                            <option value="uk">UK</option>
+                                                            <option value="au">AU</option>
+                                                            <option value="eu">EU</option>
+                                                            <option value="ca">CA</option>
+                                                            <option value="global">Global</option>
+                                                    </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Price Range</label>
+                        <select class="filter-select" id="priceFilter">
+                            <option value="">All Prices</option>
+                            <option value="0-50">$0 - $50</option>
+                            <option value="50-100">$50 - $100</option>
+                            <option value="100+">$100+</option>
+                        </select>
+                    </div>
+                    <button class="clear-filters" onclick="clearFilters()">
+                        <i class="fas fa-times"></i>
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Origins</div>
+                </div>
+            </div>
+
+            <div class="cards-grid" id="cardsGrid">
+                                                                <div class="card-item" data-type="discover" data-origin="us" data-price="10.5">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            FrostByte                        </div>
+                        <div class="card-level">93% valid</div>
+                    </div>
+                    <div class="card-description">Discover dumps, high success online.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Discover</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">93% valid</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-us"></span>
+                        <span>US</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$10.50</div>
+                        <form class="purchase-form" data-id="44">
+                            <input type="hidden" name="purchase_id" value="44">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="mastercard" data-origin="uk" data-price="11.3">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            ThunderHub                        </div>
+                        <div class="card-level">95% valid</div>
+                    </div>
+                    <div class="card-description">Mastercard Gold dumps, verified.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Mastercard</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">95% valid</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-gb"></span>
+                        <span>UK</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$11.30</div>
+                        <form class="purchase-form" data-id="46">
+                            <input type="hidden" name="purchase_id" value="46">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="visa" data-origin="au" data-price="7.4">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            GlitchTrader                        </div>
+                        <div class="card-level">89% hit rate</div>
+                    </div>
+                    <div class="card-description">Visa dumps, fresh batch, low decline.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Visa</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">89% hit rate</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-au"></span>
+                        <span>AU</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$7.40</div>
+                        <form class="purchase-form" data-id="47">
+                            <input type="hidden" name="purchase_id" value="47">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="mastercard" data-origin="eu" data-price="8.6">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            NovaPulse                        </div>
+                        <div class="card-level">94% hit rate</div>
+                    </div>
+                    <div class="card-description">Mastercard dumps, premium quality.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Mastercard</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">94% hit rate</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-xx"></span>
+                        <span>EU</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$8.60</div>
+                        <form class="purchase-form" data-id="49">
+                            <input type="hidden" name="purchase_id" value="49">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="mastercard" data-origin="ca" data-price="11.7">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            ShadowFlux                        </div>
+                        <div class="card-level">96% valid</div>
+                    </div>
+                    <div class="card-description">Mastercard Track 1+2, high balance.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Mastercard</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">96% valid</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-ca"></span>
+                        <span>CA</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$11.70</div>
+                        <form class="purchase-form" data-id="52">
+                            <input type="hidden" name="purchase_id" value="52">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="visa" data-origin="eu" data-price="7.1">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            CryptoSurge                        </div>
+                        <div class="card-level">87% hit rate</div>
+                    </div>
+                    <div class="card-description">Visa dumps, unchecked batch.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Visa</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">87% hit rate</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-xx"></span>
+                        <span>EU</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$7.10</div>
+                        <form class="purchase-form" data-id="53">
+                            <input type="hidden" name="purchase_id" value="53">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="amex" data-origin="ca" data-price="9.2">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            NightRaven                        </div>
+                        <div class="card-level">90% hit rate</div>
+                    </div>
+                    <div class="card-description">Amex Track 2 dumps, fresh batch.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Amex</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">90% hit rate</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-ca"></span>
+                        <span>CA</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$9.20</div>
+                        <form class="purchase-form" data-id="83">
+                            <input type="hidden" name="purchase_id" value="83">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="discover" data-origin="us" data-price="6.9">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            GhostByte                        </div>
+                        <div class="card-level">89% valid</div>
+                    </div>
+                    <div class="card-description">Discover dumps, high online success.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Discover</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">89% valid</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-us"></span>
+                        <span>US</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$6.90</div>
+                        <form class="purchase-form" data-id="84">
+                            <input type="hidden" name="purchase_id" value="84">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="visa" data-origin="au" data-price="7.3">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            NeonGhost                        </div>
+                        <div class="card-level">88% hit rate</div>
+                    </div>
+                    <div class="card-description">Visa dumps, low decline rate.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Visa</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">88% hit rate</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-au"></span>
+                        <span>AU</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$7.30</div>
+                        <form class="purchase-form" data-id="87">
+                            <input type="hidden" name="purchase_id" value="87">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="amex" data-origin="us" data-price="8.8">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            PhantomCore                        </div>
+                        <div class="card-level">94% valid</div>
+                    </div>
+                    <div class="card-description">Amex dumps with full track data.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Amex</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">94% valid</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-us"></span>
+                        <span>US</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$8.80</div>
+                        <form class="purchase-form" data-id="88">
+                            <input type="hidden" name="purchase_id" value="88">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="mastercard" data-origin="ca" data-price="11.8">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            ThunderSpecter                        </div>
+                        <div class="card-level">96% valid</div>
+                    </div>
+                    <div class="card-description">Mastercard Track 1+2, high limit.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Mastercard</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">96% valid</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-ca"></span>
+                        <span>CA</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$11.80</div>
+                        <form class="purchase-form" data-id="92">
+                            <input type="hidden" name="purchase_id" value="92">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="mastercard" data-origin="global" data-price="8.2">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            NovaStrider                        </div>
+                        <div class="card-level">93% hit rate</div>
+                    </div>
+                    <div class="card-description">Mastercard dumps, multi-region.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Mastercard</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">93% hit rate</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-xx"></span>
+                        <span>Global</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$8.20</div>
+                        <form class="purchase-form" data-id="95">
+                            <input type="hidden" name="purchase_id" value="95">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="visa" data-origin="us" data-price="7.9">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            IronGhost                        </div>
+                        <div class="card-level">90% hit rate</div>
+                    </div>
+                    <div class="card-description">Visa Track 2 dumps, retail focus.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Visa</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">90% hit rate</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-us"></span>
+                        <span>US</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$7.90</div>
+                        <form class="purchase-form" data-id="96">
+                            <input type="hidden" name="purchase_id" value="96">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="mastercard" data-origin="us" data-price="8.1">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            ThunderGhost                        </div>
+                        <div class="card-level">90% valid</div>
+                    </div>
+                    <div class="card-description">Mastercard dumps, fresh batch.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Mastercard</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">90% valid</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-us"></span>
+                        <span>US</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$8.10</div>
+                        <form class="purchase-form" data-id="107">
+                            <input type="hidden" name="purchase_id" value="107">
+                            
+                        </form>
+                    </div>
+                </div>
+                                                <div class="card-item" data-type="amex" data-origin="uk" data-price="9.9">
+                    <div class="card-header">
+                        <div class="card-type">
+                            <i class="fas fa-database"></i>
+                            CrypticStrider                        </div>
+                        <div class="card-level">93% valid</div>
+                    </div>
+                    <div class="card-description">Amex dumps, high success.</div>
+                    <div class="card-details">
+                        <div class="detail-item">
+                            <div class="detail-label">Data Type</div>
+                            <div class="detail-value">Amex</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Quality</div>
+                            <div class="detail-value">93% valid</div>
+                        </div>
+                    </div>
+                    <div class="card-location">
+                        <span class="flag-icon flag-icon-gb"></span>
+                        <span>UK</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-price">$9.90</div>
+                        <form class="purchase-form" data-id="109">
+                            <input type="hidden" name="purchase_id" value="109">
+                            
+                        </form>
+                    </div>
+                </div>
+                                            </div>
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No dumps found</h3>
+                <p>Try adjusting your search criteria or filters</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+  <script>
+    // Filter dumps
+    const searchInput = document.getElementById('searchInput');
+    const dataTypeFilter = document.getElementById('dataTypeFilter');
+    const originFilter = document.getElementById('originFilter');
+    const priceFilter = document.getElementById('priceFilter');
+    const cardsGrid = document.getElementById('cardsGrid');
+    const emptyState = document.getElementById('emptyState');
+
+    function filterCards() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const selectedType = dataTypeFilter.value.toLowerCase();
+        const selectedOrigin = originFilter.value.toLowerCase();
+        const selectedPrice = priceFilter.value;
+        const cards = document.querySelectorAll('.card-item');
+        let visibleCards = 0;
+
+        cards.forEach(card => {
+            const cardText = card.textContent.toLowerCase();
+            const cardType = card.dataset.type || '';
+            const cardOrigin = card.dataset.origin || '';
+            const cardPrice = parseFloat(card.dataset.price) || 0;
+
+            let show = true;
+            if (searchTerm && !cardText.includes(searchTerm)) show = false;
+            if (selectedType && cardType !== selectedType) show = false;
+            if (selectedOrigin && cardOrigin !== selectedOrigin) show = false;
+            if (selectedPrice) {
+                const [min, max] = selectedPrice.split('-').map(p => p.includes('+') ? Infinity : parseFloat(p));
+                if (cardPrice < min || (max !== Infinity && cardPrice > max)) show = false;
+            }
+
+            card.style.display = show ? 'block' : 'none';
+            if (show) visibleCards++;
+        });
+
+        cardsGrid.style.display = visibleCards > 0 ? 'grid' : 'none';
+        emptyState.style.display = visibleCards > 0 ? 'none' : 'block';
+    }
+
+    searchInput?.addEventListener('input', filterCards);
+    dataTypeFilter?.addEventListener('change', filterCards);
+    originFilter?.addEventListener('change', filterCards);
+    priceFilter?.addEventListener('change', filterCards);
+
+    function clearFilters() {
+        searchInput.value = '';
+        dataTypeFilter.value = '';
+        originFilter.value = '';
+        priceFilter.value = '';
+        filterCards();
+    }
+
+    // Handle purchase with AJAX
+    document.querySelectorAll('.purchase-form').forEach(form => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const button = form.querySelector('.buy-button');
+            button.disabled = true;
+            button.classList.add('loading');
+            button.querySelector('span').textContent = 'Processing...';
+
+            const formData = new FormData(form);
+            try {
+                const response = await fetch('', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                const messageContainer = document.getElementById('message-container');
+                messageContainer.innerHTML = `
+                    <div class="message ${result.success ? 'success' : 'error'}">
+                        ${result.message}
+                        <button class="close-message">×</button>
+                    </div>
+                `;
+                if (result.success) {
+                    setTimeout(() => {
+                        window.location.href = 'orders.php';
+                    }, 2000);
+                    form.closest('.card-item').remove();
+                    filterCards();
+                    document.querySelector('.balance-amount').textContent = `$${parseFloat(result.new_balance).toFixed(2)}`;
+                }
+                setTimeout(() => {
+                    messageContainer.querySelector('.message').style.opacity = '0';
+                    setTimeout(() => messageContainer.innerHTML = '', 300);
+                }, 5000);
+            } catch (error) {
+                document.getElementById('message-container').innerHTML = `
+                    <div class="message error">
+                        Error processing purchase. Please try again.
+                        <button class="close-message">×</button>
+                    </div>
+                `;
+                setTimeout(() => {
+                    document.getElementById('message-container').querySelector('.message').style.opacity = '0';
+                    setTimeout(() => document.getElementById('message-container').innerHTML = '', 300);
+                }, 5000);
+            } finally {
+                button.disabled = false;
+                button.classList.remove('loading');
+                button.querySelector('span').textContent = 'Buy Now';
+            }
+        });
+    });
+
+    // Close message
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('close-message')) {
+            e.target.parentElement.style.opacity = '0';
+            setTimeout(() => e.target.parentElement.remove(), 300);
+        }
+    });
+
+    // Ripple effect
+    document.querySelectorAll('.buy-button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            if (!btn.disabled) {
+                btn.classList.add('ripple');
+                setTimeout(() => btn.classList.remove('ripple'), 600);
+            }
+        });
+    });
+</script></body></html>
